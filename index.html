@@ -1,0 +1,332 @@
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>شهد حلول تقنية</title>
+
+  <style>
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #fff;
+      color: #1d1d1f;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, .95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #eee;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #6e6e73;
+      font-size: 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
+    }
+
+    nav button.active {
+      color: #1d1d1f;
+      background: rgba(0, 0, 0, .06);
+    }
+
+    .page {
+      display: none
+    }
+
+    .page.active {
+      display: block
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .hero h1 {
+      font-size: 44px;
+      margin-bottom: 12px
+    }
+
+    .hero p {
+      color: #6e6e73;
+      font-size: 18px;
+      line-height: 1.8
+    }
+
+    /* BUTTON */
+    .btn {
+      margin-top: 16px;
+      padding: 12px 26px;
+      border-radius: 999px;
+      border: none;
+      background: #0071e3;
+      color: #fff;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    /* LAYOUT */
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 50px 20px;
+    }
+
+    .card {
+      background: #f5f5f7;
+      border-radius: 28px;
+      padding: 28px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-top: 0
+    }
+
+    /* DEVICES */
+    .devices-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .device img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 22px;
+      filter: grayscale(100%);
+      transition: .4s;
+    }
+
+    .device img:hover {
+      filter: grayscale(0%);
+      transform: scale(1.02);
+    }
+
+    /* ABOUT */
+    .about-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .about-gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 22px;
+      filter: grayscale(100%);
+      transition: .4s;
+    }
+
+    .about-gallery img:hover {
+      filter: grayscale(0%)
+    }
+
+    /* FORM */
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid #ccc;
+      margin-top: 8px;
+      font-family: inherit;
+    }
+
+    textarea {
+      min-height: 120px
+    }
+
+    /* BLOG */
+    .post {
+      background: #fff;
+      border-radius: 20px;
+      padding: 18px;
+      margin-top: 16px;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid #eee;
+      padding: 18px;
+      text-align: center;
+      color: #6e6e73;
+      font-size: 12px;
+    }
+
+    @media(max-width:900px) {
+      .devices-grid {
+        grid-template-columns: 1fr
+      }
+
+      .about-gallery {
+        grid-template-columns: 1fr
+      }
+
+      .hero h1 {
+        font-size: 36px
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <strong>شهد حلول تقنية</strong>
+      <div>
+        <button class="active" onclick="go('home',this)">الرئيسية</button>
+        <button onclick="go('quote',this)">طلب عرض سعر</button>
+        <button onclick="go('about',this)">من نحن</button>
+        <button onclick="go('blog',this)">المدونة</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+  <section id="home" class="page active">
+    <div class="hero">
+      <div>
+        <h1>التقنية… ببساطة</h1>
+        <p>حلول وتجارب رقمية مختارة بعناية</p>
+
+        <button class="btn" onclick="go('quote')">اطلب عرض سعر</button>
+
+        <div class="devices-grid">
+          <div class="device"><img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=70"></div>
+          <div class="device"><img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?auto=format&fit=crop&w=1200&q=70"></div>
+          <div class="device"><img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&q=70"></div>
+          <div class="device"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=70"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section id="quote" class="page">
+    <div class="container">
+      <div class="card">
+        <h2>طلب عرض سعر</h2>
+
+        <input id="qName" placeholder="الاسم">
+        <select id="qType">
+          <option>شركة</option>
+          <option>مؤسسة</option>
+          <option>فرد</option>
+        </select>
+        <select id="qService">
+          <option>موقع إلكتروني</option>
+          <option>تصميم متجر</option>
+          <option>استشارة تقنية</option>
+        </select>
+        <textarea id="qDetails" placeholder="تفاصيل الطلب"></textarea>
+
+        <button class="btn" onclick="sendQuote()">إرسال عبر واتساب</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="page">
+    <div class="container">
+      <div class="card">
+        <h2>من نحن</h2>
+
+        <p>
+          أنا <strong>شهد عبدالمجيد</strong>، مواليد 1993،
+          أعمل في المجال التقني منذ عام 2015.
+        </p>
+        <p>
+          بدأت رحلتي مع أنظمة Windows حتى عام 2011،
+          ومنذ 2012 وحتى اليوم أعتمد على منظومة Apple.
+        </p>
+
+        <div class="about-gallery">
+          <img src="https://cdn.mos.cms.futurecdn.net/yygi3vC7NsuwpFJamMxB9W-1200-80.jpg" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/f/f5/Steve_Jobs_Headshot_2010-CROP.jpg';">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=70">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=70">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section id="blog" class="page">
+    <div class="container">
+      <div class="card">
+        <h2>المدونة</h2>
+        <div class="post">قريبًا سيتم نشر المقالات التقنية.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © شهد حلول تقنية
+  </footer>
+
+  <script>
+    function go(id, btn) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      window.scrollTo(0, 0);
+    }
+
+    function sendQuote() {
+      const name = document.getElementById('qName').value;
+      const type = document.getElementById('qType').value;
+      const service = document.getElementById('qService').value;
+      const details = document.getElementById('qDetails').value;
+      const msg =
+        `طلب عرض سعر
+الاسم: ${name}
+الصفة: ${type}
+الخدمة: ${service}
+التفاصيل:
+${details}`;
+      window.open(
+        "https://wa.me/966550164080?text=" + encodeURIComponent(msg),
+        "_blank"
+      );
+    }
+  </script>
+
+</body>
+
+</html>
+    
+  </body>
+  
+</html>
