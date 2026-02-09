@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>لوحة الأدمن - نشر مقال</title>
+<style>
+body{font-family:Segoe UI,Arial,sans-serif;background:#f5f5f7;margin:0}
+.container{max-width:700px;margin:60px auto;background:#fff;padding:30px;border-radius:20px}
+input,textarea{width:100%;padding:12px;margin-top:10px;border-radius:12px;border:1px solid #ccc}
+button{margin-top:15px;padding:12px 24px;border:none;border-radius:999px;background:#0071e3;color:#fff;cursor:pointer}
+a{color:#0071e3;text-decoration:none}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>نشر مقال جديد</h2>
+  <a href="blog.html">فتح المدونة</a>
+
+  <input id="title" placeholder="عنوان المقال">
+  <textarea id="content" placeholder="محتوى المقال"></textarea>
+
+  <button onclick="publish()">نشر المقال</button>
+  <p id="msg"></p>
+</div>
+
+<script>
+function publish(){
+  const title = document.getElementById('title').value.trim();
+  const content = document.getElementById('content').value.trim();
+  if(!title || !content){ alert("كمّلي العنوان والمحتوى"); return; }
+
+  const posts = JSON.parse(localStorage.getItem('posts') || '[]');
+  posts.unshift({
+    title,
+    content,
+    date: new Date().toLocaleDateString('ar-SA')
+  });
+
+  localStorage.setItem('posts', JSON.stringify(posts));
+  document.getElementById('msg').innerText = "✅ تم نشر المقال. افتحي المدونة وشوفيه.";
+  document.getElementById('title').value = '';
+  document.getElementById('content').value = '';
+}
+</script>
+
+</body>
+</html>
