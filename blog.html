@@ -4,43 +4,48 @@
 <meta charset="utf-8">
 <title>المدونة</title>
 <style>
+  html, body { margin:0; padding:0; overflow-x:hidden; }
+
+  .topbar{
+    position:sticky; top:0; z-index:10;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid #e5e5e5;
+    display:flex; align-items:center;
+    gap:14px;
+    padding:14px 20px;
+    min-height:56px;
+    box-sizing:border-box;
+  }
+  .topbar a{ text-decoration:none; }
+  .navlinks{ display:flex; gap:14px; align-items:center; }
+  .navlinks a{ color:#1d1d1f; font-size:14px; }
+  .login{
+    margin-inline-start:auto;  /* هذا اللي يحل المشكلة */
+    font-size:14px;
+    color:#6e6e73;
+    white-space:nowrap;
+    line-height:1;
+  }
+</style>
+
 body{font-family:Segoe UI,Arial,sans-serif;background:#f5f5f7;margin:0}
 .container{max-width:800px;margin:40px auto;padding:20px}
 .post{background:#fff;padding:20px;border-radius:20px;margin-bottom:20px}
 .meta{color:#777;font-size:12px;margin-bottom:8px}
 a{color:#0071e3;text-decoration:none}
-</style>
+
 </head>
 <body>
- <header style="
-  width:100%;
-  padding:18px 20px;
-  border-bottom:1px solid #e5e5e5;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  min-height:56px;
-  box-sizing:border-box;
-  overflow:visible;
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial;
-">
-  
-  <div style="display:flex;gap:16px;align-items:center;">
-    <a href="index.html" style="text-decoration:none;color:#1d1d1f;">الرئيسية</a>
-    <a href="blog.html" style="text-decoration:none;color:#1d1d1f;">المدونة</a>
-  </div>
+<header class="topbar">
+  <nav class="navlinks">
+    <a href="index.html">الرئيسية</a>
+    <a href="blog.html">المدونة</a>
+  </nav>
 
-  <a href="login.html" style="
-    font-size:14px;
-    line-height:1;
-    color:#6e6e73;
-    text-decoration:none;
-    white-space:nowrap;
-  ">
-    تسجيل دخول
-  </a>
-
+  <a class="login" href="login.html">تسجيل دخول</a>
 </header>
+
 
 
 <div class="container">
